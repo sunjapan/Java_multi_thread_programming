@@ -1,4 +1,4 @@
-package chap1;
+package chap1.callMainMethodMainThread;
 
 public class Test {
 
