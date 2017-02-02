@@ -1,17 +1,18 @@
-package chap3.pipeInputOutput;
+package chap3.pipeReaderWriter;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
+import java.io.PipedReader;
 
 public class ReadData {
-	public void readMethod(PipedInputStream input){
+	public void readMethod(PipedReader input){
 		try {
 			System.out.println("read: ");
-			byte[] byteArray = new byte[20];
+			char[] byteArray = new char[20];
 			int readLength= input.read(byteArray);
 			while(readLength != -1){
 				String newData = new String(byteArray, 0, readLength);
-				System.out.print("read->"+newData);
+				System.out.print(newData);
 				readLength = input.read(byteArray);
 			}
 			System.out.println();
